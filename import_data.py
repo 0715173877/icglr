@@ -26,10 +26,10 @@ def import_excel_data(file_path):
             import re
             def replacer(match):
                 sign = '+' if match.group(1) in 'NE' else '-'
-                return f"-{sign}{match.group(2)}"
+                return f"{sign}{match.group(2)}"
             
             new_mine_id = re.sub(r'-(N|S|E|W)(\d+\.\d+)', replacer, str(raw_id))
-            new_mine_id = re.sub(r'^[A-Z]{2}-', 'TZ-', new_mine_id)
+            new_mine_id = re.sub(r'^[A-Z]{2}', 'TZ', new_mine_id)
             
             # Format license id safely ensuring TZ prefix
             raw_license = str(row.get('license_id', ''))
