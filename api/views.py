@@ -6,6 +6,19 @@ from django.db.models import Q, Count
 from .models import Mine
 from .serializers import MineSerializer
 from .pagination import StandardResultsSetPagination
+from drf_spectacular.utils import extend_schema
+from rest_framework.decorators import api_view
+from rest_framework.reverse import reverse
+
+@api_view(['GET'])
+def custom_api_root(request, format=None):
+    return Response({
+        'Mines API Database': reverse('mine-list', request=request, format=format),
+        'Raw Data List (Unpaginated)': request.build_absolute_uri('/api/mines/raw_list/'),
+        'Mines Summary Statistics': request.build_absolute_uri('/api/mines/summary/'),
+        'Mines by Region': request.build_absolute_uri('/api/mines/by_region/'),
+        'Interactive OpenAPI Docs': request.build_absolute_uri('/api/docs/'),
+    })
 
 class MineViewSet(viewsets.ModelViewSet):
     queryset = Mine.objects.all().order_by('mine_site_name')
@@ -34,6 +47,14 @@ class MineViewSet(viewsets.ModelViewSet):
     
     # Removed get_serializer_class to allow list views to use the primary MineSerializer
     
+    @extend_schema(responses=MineSerializer(many=True), description="Get an unpaginated pure list array of all mine data")
+    @action(detail=False, methods=['get'])
+    def raw_list(self, request):
+        """Get an unpaginated pure list array of all mine data"""
+        queryset = self.filter_queryset(self.get_queryset())
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+
     @action(detail=False, methods=['get'])
     def summary(self, request):
         """Get summary statistics"""
