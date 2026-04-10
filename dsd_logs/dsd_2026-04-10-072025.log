@@ -1,0 +1,106 @@
+2026-04-10 07:20:25,888 INFO: Logging run of `manage.py deploy`...
+2026-04-10 07:20:25,888 INFO: Created /Users/carlmihanjo/Desktop/ICGLR/8th meeting Congo Brazzaville 8-10 April 2026/icglr_mines/dsd_logs/dsd_2026-04-10-072025.log.
+2026-04-10 07:20:25,888 INFO: 
+2026-04-10 07:20:25,888 INFO: CLI args:
+2026-04-10 07:20:25,888 INFO:   verbosity: 1
+2026-04-10 07:20:25,888 INFO:   settings: None
+2026-04-10 07:20:25,888 INFO:   pythonpath: None
+2026-04-10 07:20:25,888 INFO:   traceback: False
+2026-04-10 07:20:25,888 INFO:   no_color: False
+2026-04-10 07:20:25,888 INFO:   force_color: False
+2026-04-10 07:20:25,888 INFO:   automate_all: True
+2026-04-10 07:20:25,888 INFO:   no_logging: False
+2026-04-10 07:20:25,888 INFO:   ignore_unclean_git: False
+2026-04-10 07:20:25,888 INFO:   deployed_project_name: 
+2026-04-10 07:20:25,888 INFO:   region: us-3.platform.sh
+2026-04-10 07:20:25,888 INFO:   unit_testing: False
+2026-04-10 07:20:25,888 INFO:   e2e_testing: False
+2026-04-10 07:20:25,888 INFO:   vm_size: 
+2026-04-10 07:20:25,888 INFO: 
+2026-04-10 07:20:25,888 INFO: Deployment target: Fly.io
+2026-04-10 07:20:25,888 INFO:   Using plugin: dsd_flyio
+2026-04-10 07:20:25,888 INFO: Local platform identified: macOS
+2026-04-10 07:20:25,888 INFO: Local project name: mines_api_project
+2026-04-10 07:20:25,888 INFO: Project root: /Users/carlmihanjo/Desktop/ICGLR/8th meeting Congo Brazzaville 8-10 April 2026/icglr_mines
+2026-04-10 07:20:25,888 INFO: Found .git dir at /Users/carlmihanjo/Desktop/ICGLR/8th meeting Congo Brazzaville 8-10 April 2026/icglr_mines.
+2026-04-10 07:20:25,888 INFO: 
+2026-04-10 07:20:25,888 INFO: git status --porcelain
+2026-04-10 07:20:25,908 INFO:  M mines_api_project/__pycache__/settings.cpython-313.pyc
+2026-04-10 07:20:25,909 INFO:  M mines_api_project/settings.py
+2026-04-10 07:20:25,909 INFO:  M requirements.txt
+2026-04-10 07:20:25,909 INFO: ?? dsd_logs/
+2026-04-10 07:20:25,909 INFO: 
+2026-04-10 07:20:25,909 INFO: git diff --unified=0
+2026-04-10 07:20:25,923 INFO: diff --git a/mines_api_project/__pycache__/settings.cpython-313.pyc b/mines_api_project/__pycache__/settings.cpython-313.pyc
+2026-04-10 07:20:25,923 INFO: index 73ffd9d..80e3e55 100644
+2026-04-10 07:20:25,923 INFO: Binary files a/mines_api_project/__pycache__/settings.cpython-313.pyc and b/mines_api_project/__pycache__/settings.cpython-313.pyc differ
+2026-04-10 07:20:25,923 INFO: diff --git a/mines_api_project/settings.py b/mines_api_project/settings.py
+2026-04-10 07:20:25,923 INFO: index afcfe83..2e6891b 100644
+2026-04-10 07:20:25,923 INFO: --- a/mines_api_project/settings.py
+2026-04-10 07:20:25,923 INFO: +++ b/mines_api_project/settings.py
+2026-04-10 07:20:25,923 INFO: @@ -24 +24 @@ SECRET_KEY = *value hidden*
+2026-04-10 07:20:25,923 INFO: -
+2026-04-10 07:20:25,923 INFO: + 
+2026-04-10 07:20:25,923 INFO: @@ -42,0 +43 @@ INSTALLED_APPS = [
+2026-04-10 07:20:25,923 INFO: +    'django_simple_deploy',
+2026-04-10 07:20:25,923 INFO: @@ -126 +127,2 @@ USE_TZ = True
+2026-04-10 07:20:25,923 INFO: -STATIC_URL = 'static/'
+2026-04-10 07:20:25,923 INFO: +STATIC_URL = '/static/'
+2026-04-10 07:20:25,923 INFO: +STATIC_ROOT = BASE_DIR / 'staticfiles'
+2026-04-10 07:20:25,923 INFO: diff --git a/requirements.txt b/requirements.txt
+2026-04-10 07:20:25,923 INFO: index 09a6514..caf881b 100644
+2026-04-10 07:20:25,923 INFO: --- a/requirements.txt
+2026-04-10 07:20:25,923 INFO: +++ b/requirements.txt
+2026-04-10 07:20:25,923 INFO: @@ -1,4 +1,5 @@
+2026-04-10 07:20:25,923 INFO: -django==5.0.3
+2026-04-10 07:20:25,923 INFO: -djangorestframework==3.15.1
+2026-04-10 07:20:25,923 INFO: -pandas==2.2.1
+2026-04-10 07:20:25,923 INFO: -openpyxl==3.1.2
+2026-04-10 07:20:25,923 INFO: +asgiref==3.11.1
+2026-04-10 07:20:25,923 INFO: +attrs==26.1.0
+2026-04-10 07:20:25,923 INFO: +certifi==2026.2.25
+2026-04-10 07:20:25,923 INFO: +charset-normalizer==3.4.7
+2026-04-10 07:20:25,923 INFO: +Django==5.0.3
+2026-04-10 07:20:25,923 INFO: @@ -5,0 +7,2 @@ django-filter==24.2
+2026-04-10 07:20:25,923 INFO: +django-simple-deploy==1.4.1
+2026-04-10 07:20:25,923 INFO: +djangorestframework==3.15.1
+2026-04-10 07:20:25,923 INFO: @@ -6,0 +10,21 @@ drf-spectacular==0.27.1
+2026-04-10 07:20:25,923 INFO: +et_xmlfile==2.0.0
+2026-04-10 07:20:25,923 INFO: +idna==3.11
+2026-04-10 07:20:25,923 INFO: +inflection==0.5.1
+2026-04-10 07:20:25,923 INFO: +jsonschema==4.26.0
+2026-04-10 07:20:25,923 INFO: +jsonschema-specifications==2025.9.1
+2026-04-10 07:20:25,923 INFO: +numpy==1.26.4
+2026-04-10 07:20:25,923 INFO: +openpyxl==3.1.2
+2026-04-10 07:20:25,923 INFO: +pandas==2.2.1
+2026-04-10 07:20:25,923 INFO: +pluggy==1.6.0
+2026-04-10 07:20:25,923 INFO: +python-dateutil==2.9.0.post0
+2026-04-10 07:20:25,923 INFO: +pytz==2026.1.post1
+2026-04-10 07:20:25,923 INFO: +PyYAML==6.0.3
+2026-04-10 07:20:25,923 INFO: +referencing==0.37.0
+2026-04-10 07:20:25,923 INFO: +requests==2.33.1
+2026-04-10 07:20:25,923 INFO: +rpds-py==0.30.0
+2026-04-10 07:20:25,923 INFO: +six==1.17.0
+2026-04-10 07:20:25,923 INFO: +sqlparse==0.5.5
+2026-04-10 07:20:25,923 INFO: +toml==0.10.2
+2026-04-10 07:20:25,923 INFO: +tzdata==2026.1
+2026-04-10 07:20:25,923 INFO: +uritemplate==4.2.0
+2026-04-10 07:20:25,923 INFO: +urllib3==2.6.3
+2026-04-10 07:20:25,923 INFO: 
+2026-04-10 07:20:25,923 INFO: 
+2026-04-10 07:20:25,923 INFO: DSDCommandError:
+2026-04-10 07:20:25,923 INFO: 
+2026-04-10 07:20:25,923 INFO: The output of `git status` indicates that you have uncommitted changes.
+2026-04-10 07:20:25,923 INFO: 
+2026-04-10 07:20:25,923 INFO: We highly recommend you commit all changes before running the deploy command,
+2026-04-10 07:20:25,923 INFO: so you can easily undo configuration changes if deployment doesn't work, or if
+2026-04-10 07:20:25,923 INFO: you wish to deploy to a different platform.
+2026-04-10 07:20:25,923 INFO: 
+2026-04-10 07:20:25,923 INFO: Please commit all changes and then run the deploy command again. If you really
+2026-04-10 07:20:25,923 INFO: wish to continue without committing current changes, you can use
+2026-04-10 07:20:25,923 INFO: the --ignore-unclean-git flag.
+2026-04-10 07:20:25,923 INFO: 
+2026-04-10 07:20:25,923 INFO: It's especially important to have a clean status when using the --automate-all
+2026-04-10 07:20:25,923 INFO: flag. In this case, django-simple-deploy will make commits on your behalf. It's a
+2026-04-10 07:20:25,924 INFO: really good idea to keep your commits separate from the commits that
+2026-04-10 07:20:25,924 INFO: django-simple-deploy makes.
